@@ -63,7 +63,7 @@ function App() {
               <div className="text-center w-full p-5">
                 <h1 className="title-font sm:text-5xl text-6xl mb-4 font-medium text-white">MultiSwap</h1>
                 <h2 className="mb-8 leading-relaxed text-3xl text-white">
-                  Multi Collateral Liquidity, No Impermanent Loss, Instant DEX, ...
+                  Multi Collateral Liquidity, No Impermanent Loss, ..
                 </h2>
               </div>
             </div>
@@ -91,7 +91,7 @@ function App() {
                   </p>
                   <p className="prose prose-lg mt-2">
                     Surely single sided collateral and no impermanent loss top the list. But what if we could also add
-                    multiple collateral types in any combination or amount, a DEX in an instant, private pools, and more ...
+                    multiple collateral types in any combination or amount, private pools, and more ...
                   </p>
                   <p className="prose prose-lg mt-2">
                     MultiSwap is a huge breakthrough for AMM's, clearing the way for massive liquidity and multi collateral trading.
@@ -99,35 +99,6 @@ function App() {
                   <div className="flex md:mt-4 mt-6">
                     <Link className="text-indigo-500 inline-flex items-center" to="/overview">
                       <span>Learn More</span>
-                      <svg
-                        fill="none"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        className="w-4 h-4 ml-2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section className="text-gray-800 body-font">
-              <div className="container px-5 py-5 mx-auto flex flex-wrap">
-                <h2 className="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">
-                  An Instant DEX
-                </h2>
-                <div className="md:w-3/5 md:pl-6">
-                  <p className="prose prose-lg">
-                    One MultiSwap pool can replace an entire DEX! Further, new collateral types can be introduced dynamically to
-                    running MultiSwap pools.
-                  </p>
-                  <div className="flex md:mt-4 mt-6">
-                    <Link className="text-indigo-500 inline-flex items-center" to="/overview">
-                      Learn More
                       <svg
                         fill="none"
                         stroke="currentColor"

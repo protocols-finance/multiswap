@@ -26,10 +26,6 @@ function Overview() {
           At the same time, MultiSwap pools are giant liquidity pools for trading. All of the collateral in the pools 
           can be swapped just like in any AMM. Which means trading fees for liquidity providers.
         </p>
-        <h4>An Instant DEX</h4>
-        <p>
-          Just one MultiSwap pool can replace an entire DEX. Think hard about this fact. An instant DEX.
-        </p>
         <h4>Liquidity Providers are King</h4>
         <p>
           LP's are the kings in MultiSwap. It is our opinion that current defi protocols don't reward
@@ -46,22 +42,22 @@ function Overview() {
         <p>
           At the same time, underutilized collateral in the pool can be repurposed. Which means more fees for LP's.
         </p>
+        <h4>Arbitrage Can be Captured</h4>
+        <p>
+          Arbitrage is always necessary to keep prices accurate. But why not keep the profits? MultiSwap pools have this option.
+        </p>
         <h4>No Impermanent Loss Pools</h4>
         <p>
           Options on MultiSwap pools can eliminate impermanent loss.
           Obviously, this is huge for many applications.
         </p>
-        <h4>Deposit and Withdraw Any Collateral</h4>
+        <h4>Deposit Any Collateral</h4>
         <p>
           With MultiSwap, LP's can deposit any collateral (configured in the pool) in any amount. Incentives are provided when 
           particular collateral is needed.
         </p>
         <p>
-          It's the same for withdrawals. You can withdraw any of the collateral in the MultiSwap pool with your LP tokens.
-        </p>
-        <p>
-          You are not exposed to any one collateral type, but to the entire pool as a whole. And MultiSwap pools can have a theoretically
-          unlimited number of collateral types with any amounts.
+          You are not exposed to any one collateral type, but to the entire pool as a whole.
         </p>
       </div>
     </div>
