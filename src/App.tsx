@@ -63,7 +63,7 @@ function App() {
               <div className="text-center w-full p-5">
                 <h1 className="title-font sm:text-5xl text-6xl mb-4 font-medium text-white">MultiSwap</h1>
                 <h2 className="mb-8 leading-relaxed text-3xl text-white">
-                  Multi Collateral Liquidity, No Impermanent Loss, ..
+                  Multi Collateral Liquidity, Impermanent Loss Protection, Private Pools, ...
                 </h2>
               </div>
             </div>
@@ -90,7 +90,7 @@ function App() {
                     If we could list the best properties a liquidity pool <i>could</i> have, what would they be?
                   </p>
                   <p className="prose prose-lg mt-2">
-                    Surely single sided collateral and no impermanent loss top the list. But what if we could also add
+                    Surely single sided collateral and impermanent loss protection top the list. But what if we could also add
                     multiple collateral types in any combination or amount, private pools, and more ...
                   </p>
                   <p className="prose prose-lg mt-2">
