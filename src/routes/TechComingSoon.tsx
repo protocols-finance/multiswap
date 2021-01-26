@@ -1,5 +1,5 @@
 import React from 'react';
-import { DiscordUrl } from '../constants';
+import { DiscordLink } from '../components';
 
 function Tech() {
   return (
@@ -27,7 +27,7 @@ function Tech() {
           </p>
           <h4>Team</h4>
           <p>We are a small team looking for significant partners, devs, and others, to share in the success of MultiSwap.</p>
-          <p>DM @MultiSwap on <a href={DiscordUrl}><span className="text-indigo-500">Discord</span></a>, or email hello at multiswap dot finance.</p> 
+          <p>DM @MultiSwap on <DiscordLink title="Discord" />, or email hello at multiswap dot finance.</p>
         </div>
       </div>
     </article>

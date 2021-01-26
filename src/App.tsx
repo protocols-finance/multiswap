@@ -11,8 +11,9 @@ import {
 import { DiscordUrl, TwitterUrl, GithubUrl } from './constants';
 
 import LGE from './routes/LGE';
-import TechComingSoon from './routes/TechComingSoon';
+import Tech from './routes/Tech';
 import Overview from './routes/Overview';
+import { DiscordLink } from './components';
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
                 Token
               </Link>
               <Link className="mr-5 hover:text-gray-900" to="/tech">
-                Tech
+                Details
               </Link>
             </nav>
             <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
@@ -71,7 +72,7 @@ function App() {
         </section>
         <Switch>
           <Route path="/tech">
-            <TechComingSoon />
+            <Tech />
           </Route>
           <Route path="/lge">
             <LGE />
@@ -90,15 +91,44 @@ function App() {
                     If we could list the best properties a liquidity pool <i>could</i> have, what would they be?
                   </p>
                   <p className="prose prose-lg mt-2">
-                    Surely single sided collateral and impermanent loss protection top the list. But what if we could also add
-                    multiple collateral types in any combination or amount, private pools, and more ...
+                    Surely multiple collateral types and impermanent loss protection top the list. But what if we could also add
+                    private pools, and more ...
                   </p>
                   <p className="prose prose-lg mt-2">
-                    MultiSwap is a huge breakthrough for AMM's, clearing the way for massive liquidity and multi collateral trading.
+                    MultiSwap is a breakthrough for AMM's, clearing the way for massive liquidity and multi collateral trading.
                   </p>
                   <div className="flex md:mt-4 mt-6">
                     <Link className="text-indigo-500 inline-flex items-center" to="/overview">
-                      <span>Learn More</span>
+                      <span>Overview</span>
+                      <svg
+                        fill="none"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        className="w-4 h-4 ml-2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section className="text-gray-800 body-font">
+              <div className="container px-5 py-5 mx-auto flex flex-wrap">
+                <h2 className="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">
+                  Technical Details
+                </h2>
+                <div className="md:w-3/5 md:pl-6">
+                  <p className="prose prose-lg mt-2">
+                    MultiSwap uses concepts and techniques from a few defi protocols in a novel way to create an
+                    elegant and deceptively simple multi collateral AMM with many interesting properties.
+                  </p>
+                  <div className="flex md:mt-4 mt-6">
+                    <Link className="text-indigo-500 inline-flex items-center" to="/tech">
+                      <span>Technical Details</span>
                       <svg
                         fill="none"
                         stroke="currentColor"
@@ -131,7 +161,7 @@ function App() {
                   </p>
                   <div className="flex md:mt-4 mt-6">
                     <Link className="text-indigo-500 inline-flex items-center" to="/lge">
-                      Details
+                      Token
                       <svg
                         fill="none"
                         stroke="currentColor"
@@ -155,12 +185,12 @@ function App() {
                 </h2>
                 <div className="md:w-3/5 md:pl-6">
                   <p className="prose prose-lg">
-                    Please join us on <a href={DiscordUrl}><span className="text-indigo-500">Discord</span></a> and help run MultiSwap. MultiSwap is controlled by the
+                    Please join us on <DiscordLink title="Discord" /> and help run MultiSwap. MultiSwap is controlled by the
                     community. Get involved and be a part of one of the most innovative and exciting defi projects
                     around today.
                   </p>
                   <p className="prose prose-lg mt-2">
-                    <a href={DiscordUrl}><span className="text-indigo-500">Discord</span></a> is the source of truth for all things MultiSwap.
+                    <DiscordLink title="Discord" /> is the source of truth for all things MultiSwap.
                   </p>
                   <div className="flex md:mt-4 mt-6">
                     <a className="text-indigo-500 inline-flex items-center" href={DiscordUrl}>

@@ -41,6 +41,15 @@ function Overview() {
         <p>
           You are not exposed to any one collateral type, but to the entire pool as a whole.
         </p>
+        <h4>Private Pools - Mini DEX</h4>
+        <p>
+          One of the nice options on MultiSwap pools is the private pool option. You can restrict access to a pool to whitelisted accounts or contracts. This
+          can be very useful for money management applications.
+        </p>
+        <p>
+          You can create a large pool of collateral and let your clients trade against it. The trading fees could even
+          be set to 0 for a competitive edge. Since you control the arbitrage on the pool, this can be a very cost effective and useful service.
+        </p>
       </div>
     </div>
   </article>

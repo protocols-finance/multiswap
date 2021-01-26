@@ -1,5 +1,5 @@
 import React from 'react';
-import { DiscordUrl } from '../constants';
+import { DiscordLink } from '../components';
 
 function LGE() {
   return (
@@ -13,7 +13,7 @@ function LGE() {
         </p>
         <h3>Liquidity Generation Event</h3>
         <p>
-          The first liqudity generation event has the following parameters:
+          The liqudity generation event has the following parameters:
         </p>
         <div className="overflow-x-auto">
           <table className="table-auto border-collapse w-full">
@@ -34,11 +34,11 @@ function LGE() {
               </tr>
               <tr className="hover:bg-gray-100 border-b border-gray-200 py-10">
                 <td className="px-4 py-4">MULTI per ETH</td>
-                <td className="px-4 py-4">300</td>
+                <td className="px-4 py-4">500</td>
               </tr>
               <tr className="hover:bg-gray-100 border-b border-gray-200 py-10">
                 <td className="px-4 py-4">Max Cap</td>
-                <td className="px-4 py-4">20000 ETH</td>
+                <td className="px-4 py-4">5000 ETH</td>
               </tr>
               <tr className="hover:bg-gray-100 border-b border-gray-200 py-4">
                 <td className="px-4 py-4 flex items-center">Min Deposit (per deposit)</td>
@@ -46,7 +46,7 @@ function LGE() {
               </tr>
               <tr className="hover:bg-gray-100 border-b border-gray-200 py-4">
                 <td className="px-4 py-4 flex items-center">Max Deposit (per account)</td>
-                <td className="px-4 py-4">1000 ETH</td>
+                <td className="px-4 py-4">500 ETH</td>
               </tr>
               <tr className="hover:bg-gray-100 border-b border-gray-200 py-4">
                 <td className="px-4 py-4 flex items-center">General Fund (% of liquidity that goes to General Fund)</td>
@@ -61,12 +61,11 @@ function LGE() {
         </div>
         <h3>Governance</h3>
         <p>
-          After the first LGE<sup><a href='#mineth'><i className="text-indigo-500">1</i></a></sup>, future LGE and/or MULTI token minting will be determined
-          by governenace<sup><a href='#farming'><i className="text-indigo-500">2</i></a></sup>. Details will be posted on 
-          our <a href={DiscordUrl}><span className="text-indigo-500">MultiSwap Discord</span></a>.
+          After the LGE, future MULTI token minting will be determined
+          by governenace<sup><a href='#farming'><i className="text-indigo-500">1</i></a></sup>. Details will be posted on 
+          our <DiscordLink title="MultiSwap Discord" />.
         </p>
         <ol>
-          <li>If a minimum number of ETH is deposited.</li>
           <li>Except for the farming program. The specifics of the farming program will be determined by governance, but the program itself
           will always occur.</li>
         </ol>
