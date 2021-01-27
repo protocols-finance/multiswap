@@ -179,7 +179,8 @@ function _swapFromUnit(Pair storage pair, uint256 unit) internal returns(uint256
             </li>
           </ol>
           <p>
-            Some of the ideas for the Unit token were hinted at in the above references from Andre Cronje.
+            Some of the ideas for Unit were hinted at in the above references from Andre Cronje. Thanks Andre, for your persistence and for 'testing in prod'.
+            If you are interested in MultiSwap, contact us through Discord, Twitter, or use protocols dot finance at protonmail dot com.
           </p>
           <h3>Future</h3>
           <p>
