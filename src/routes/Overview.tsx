@@ -28,10 +28,10 @@ function Overview() {
         <p>
            MultiSwap is easily the most LP friendly AMM in existence.
         </p>
-        <h4>Impermanent Loss Protection</h4>
+        <h4>Impermanent Loss Mitigation</h4>
         <p>
           Arbitrage is always necessary to keep prices accurate. But why not keep the profits? MultiSwap pools can capture most (or all)
-          arbitrage profits, providing impermanent loss protection.
+          arbitrage profits, providing impermanent loss mitigation.
         </p>
         <h4>Collateral can be Repurposed</h4>
         <p>

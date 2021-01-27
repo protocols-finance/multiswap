@@ -13,7 +13,7 @@ import { DiscordUrl, TwitterUrl, GithubUrl } from './constants';
 import LGE from './routes/LGE';
 import Tech from './routes/Tech';
 import Overview from './routes/Overview';
-import { DiscordLink } from './components';
+import { DiscordLink, TwitterLink } from './components';
 
 function App() {
   return (
@@ -64,7 +64,7 @@ function App() {
               <div className="text-center w-full p-5">
                 <h1 className="title-font sm:text-5xl text-6xl mb-4 font-medium text-white">MultiSwap</h1>
                 <h2 className="mb-8 leading-relaxed text-3xl text-white">
-                  Multi Collateral Liquidity, Impermanent Loss Protection, Private Pools, ...
+                  Multi Collateral Liquidity, Impermanent Loss Mitigation, Private Pools, ...
                 </h2>
               </div>
             </div>
@@ -91,7 +91,7 @@ function App() {
                     If we could list the best properties a liquidity pool <i>could</i> have, what would they be?
                   </p>
                   <p className="prose prose-lg mt-2">
-                    Surely multiple collateral types and impermanent loss protection top the list. But what if we could also add
+                    Surely multiple collateral types and impermanent loss mitigation top the list. But what if we could also add
                     private pools, and more ...
                   </p>
                   <p className="prose prose-lg mt-2">
@@ -195,6 +195,37 @@ function App() {
                   <div className="flex md:mt-4 mt-6">
                     <a className="text-indigo-500 inline-flex items-center" href={DiscordUrl}>
                       Join Discord
+                      <svg
+                        fill="none"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        className="w-4 h-4 ml-2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section className="text-gray-800 body-font">
+              <div className="container px-5 py-5 mx-auto flex flex-wrap">
+                <h2 className="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">
+                  Join us on Twitter
+                </h2>
+                <div className="md:w-3/5 md:pl-6">
+                  <p className="prose prose-lg">
+                    Please join us on <TwitterLink title="Twitter" /> to get the latest on MultiSwap.
+                  </p>
+                  <p className="prose prose-lg mt-2">
+                    <TwitterLink title="Twitter" /> has up to date news for all things MultiSwap.
+                  </p>
+                  <div className="flex md:mt-4 mt-6">
+                    <a className="text-indigo-500 inline-flex items-center" href={TwitterUrl}>
+                      Twitter
                       <svg
                         fill="none"
                         stroke="currentColor"

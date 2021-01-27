@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from '../components';
 
+const Arb = () => <i>arbitrage complete</i>
+
 function Tech() {
   return (
     <article className="text-gray-800 body-font">
       <div className="container px-5 py-5 mx-auto flex flex-col items-center">
         <div className="prose prose-lg">
-          <h2>Concepts</h2>
           <p>
             MultiSwap uses concepts and techniques from a few defi protocols in a novel way to create an
             elegant and deceptively simple multi collateral AMM with many interesting properties.
@@ -24,7 +25,7 @@ function Tech() {
             The concept of arbitrage is very important in the operation of MultiSwap. Arbitrage ensures that the collateral in 
             the MultiSwap pool has the correct prices. If there is no profitable arbitrage with a MultiSwap pool, then
             the Unit values are correct in relation to each collateral type in the pool. We will refer to the condition of
-            <i>perfect artitrage</i> to mean there is no profitable arbitrage using the MultiSwap pool collateral.
+            no profitable arbitrage using the MultiSwap pool collateral as <Arb />.
           </p>
           <h4>
             Properties of Unit
@@ -42,18 +43,18 @@ function Tech() {
               <i>Arbitrage will keep the relative values of Unit on each pair correct.</i>
             </li>
             <li>
-              Under perfect arbitrage, Unit can be used to represent the correct share of any collateral in the pool. For example, if 
+              If the MultiSwap pool is <Arb />, Unit can be used to represent the correct share of any collateral in the pool. For example, if 
               we wanted to find what share of the pool 10 ETH represented, we could use the reserves to calculate the Unit amount for 10 ETH, 
               and divide by the total Unit to get the exact share of the pool 10 ETH represents.
             </li>
             <li>
-              Since Unit is not used outside of any MultiSwap pool, it can be represented as just an unsigned integer total. We don't need another token. 
+              Since Unit is not used outside of any MultiSwap pool, it can be represented as an unsigned integer total. We don't need another token. 
               Pairs in MultiSwap are very simple lightweight structs.
             </li>
           </ol>
           <h3>Deposits</h3>
           <p>
-            As stated above, under perfect arbitrage, Unit could be used to represent the share of the pool when any collateral is provided by an LP. 
+            As stated above, if the pool is <Arb />, Unit could be used to represent the share of the pool when any collateral is provided by an LP. 
             The problem is that it may not be possible to ensure this condition when collateral is deposited. (We say <b>may</b> because we are still
             researching this possibility, see the <span className="text-indigo-500">Future</span> section below.) 
           </p>
@@ -63,9 +64,9 @@ function Tech() {
           <h4>Initial Deposit</h4>
           <p>
             The initial deposit adds all the collateral types to the pool. The collateral and amount of Unit for each collateral type are passed 
-            on the request. Note that the amount of Unit does not have to be the actual price, but only has to be correct in relation to the 
-            other collateral types being added. Using an oracle price for each collateral price is sufficient, so that is a good way to 
-            proceed. (Note that some kind of slippage parameter(s) will also be used, but we'll ignore that for now.)
+            on the request. Note that the amount of Unit does not have to relate to the actual price, but only has to be correct in relation to the 
+            other collateral types being added. However, since using an oracle price to calculate the Unit amounts for each collateral type is sufficient, 
+            so that is a good way to proceed. (Note that some kind of slippage parameter(s) will also be used, but we'll ignore that for now.)
           </p>
           <p>
             The reserves for each pair in the pool are initialized with the deposit information. The LP share (which we will call <b>lpUnit</b>) is calculated 
@@ -74,9 +75,10 @@ function Tech() {
           <h4>Subsequent Deposits</h4>
           <p>
             For subsequent deposits, the LP requests a percentage of the current pool. (With a slippage parameter, ignored for now...) Then for each pair
-            in the pool it's trivial to calculate the correct value of Unit to deposit (just take the percentage). Then use the Unit amount and the reserves
+            in the pool it's trivial to calculate the correct value of Unit to add to the reserves (just take the percentage). Then use the Unit amount and the reserves
             to calculate the amount of collateral to deposit for each pair.
-            <ol>
+          </p>
+          <ol>
             <li>Calculate the percentage of Unit for each pair using the reserves.</li>
             <li>Using the reserves and Unit, calculate the amount of collateral to deposit for each pair.</li>
             <li>Adjust the reserve values for each pair.</li>
@@ -84,10 +86,11 @@ function Tech() {
             <li>Calculate the number of lpUnit tokens to mint. Just use the percentage and current lpUnit total.</li>
             <li>Mint the lpUnit tokens and transfer to LP.</li>
           </ol>
-          </p>
           <p>
-            Transfer in the collateral, and calculate the lpUnit tokens by the same simple percentage calculation, using the total supply of lpUnit tokens.
+            Note that because a deposit leaves the prices of collateral unchanged, this is economically sound. It's just like adding liquidity to
+            a Uniswap pair using the current reserves in the pair.
           </p>
+
           <h3>Swaps</h3>
           <p>
             Swaps between any collateral types are trivial. Swap input tokens to Unit tokens using one pair, then swap the Unit tokens for the output token.
@@ -124,13 +127,13 @@ function Tech() {
               Arbitrage will ensure the Unit values are correct. Hence the prices of the collateral in the pool are correct to an outside observer.
             </li>
             <li>
-              Under perfect arbitrage (meaning there is no profitable arbitrage using the pool collateral), Unit can be used to provide a relative share
+              If the pool is <Arb /> (meaning there is no profitable arbitrage using the pool collateral), Unit can be used to provide a relative share
               value of any of the collateral types in the pool (and as the lpUnit value).
             </li>
           </ol>
           <h3>Implementation</h3>
           <p>The implementation is extremely simple, concise, and fast. We don't use Uniswap, since our pairs can be represented as lightweight structs. The 
-            current test version is less than 200 lines of Solidity. Granted, it does not have all the options, but the full version is not going to be much 
+            current test version is only 175 lines of Solidity. Granted, it does not have all the options, but the full version is not going to be much 
             more code.
           </p>
           <p>As an example of the economy of MultiSwap, here is the <b>swap</b> method.</p>
@@ -171,6 +174,9 @@ function _swapFromUnit(Pair storage pair, uint256 unit) internal returns(uint256
             <li>
               <Link title="StableCredit" url="https://medium.com/iearn/introducing-stablecredit-a-new-protocol-for-decentralized-lending-stablecoins-and-amms-7252a43ee56" />
             </li>
+            <li>
+              <Link title="MultiSwap.sol" url="https://github.com/protocols-finance/multiswap-contracts/blob/master/contracts/multiswap/MultiSwap.sol" />
+            </li>
           </ol>
           <p>
             Some of the ideas for the Unit token were hinted at in the above references from Andre Cronje.
@@ -182,7 +188,7 @@ function _swapFromUnit(Pair storage pair, uint256 unit) internal returns(uint256
           <ol>
             <li>
               <p>
-              Performing arbitrage on the pool during deposits. If we could ensure that the pool was perfectly arbitraged at the time of deposit,
+              Performing arbitrage on the pool during deposits. If we could ensure that the pool was <Arb /> at the time of deposit,
               then:
               </p>
               <ol>

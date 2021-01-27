@@ -1,13 +1,16 @@
 import React from 'react';
-import { DiscordUrl } from './constants';
+import { DiscordUrl, TwitterUrl } from './constants';
 
 interface LinkProps {
   title: string
   url?: string
 }
 
+export const TwitterLink = ({ title }: LinkProps) => 
+  <a href={TwitterUrl} target="_blank"><span className="text-indigo-500">{title}</span></a>
+
 export const DiscordLink = ({ title }: LinkProps) => 
-  <a href={DiscordUrl}><span className="text-indigo-500">{title}</span></a>
+  <a href={DiscordUrl} target="_blank"><span className="text-indigo-500">{title}</span></a>
 
 export const Link = ({ title, url }: LinkProps) => 
-  <a href={url}><span className="text-indigo-500">{title}</span></a>
+  <a href={url} target="_blank"><span className="text-indigo-500">{title}</span></a>

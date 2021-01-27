@@ -34,19 +34,19 @@ function LGE() {
               </tr>
               <tr className="hover:bg-gray-100 border-b border-gray-200 py-10">
                 <td className="px-4 py-4">MULTI per ETH</td>
-                <td className="px-4 py-4">500</td>
+                <td className="px-4 py-4">TBD</td>
               </tr>
               <tr className="hover:bg-gray-100 border-b border-gray-200 py-10">
                 <td className="px-4 py-4">Max Cap</td>
-                <td className="px-4 py-4">5000 ETH</td>
+                <td className="px-4 py-4">TBD ETH</td>
               </tr>
               <tr className="hover:bg-gray-100 border-b border-gray-200 py-4">
                 <td className="px-4 py-4 flex items-center">Min Deposit (per deposit)</td>
-                <td className="px-4 py-4">.5 ETH</td>
+                <td className="px-4 py-4">TBD ETH</td>
               </tr>
               <tr className="hover:bg-gray-100 border-b border-gray-200 py-4">
                 <td className="px-4 py-4 flex items-center">Max Deposit (per account)</td>
-                <td className="px-4 py-4">500 ETH</td>
+                <td className="px-4 py-4">TBD ETH</td>
               </tr>
               <tr className="hover:bg-gray-100 border-b border-gray-200 py-4">
                 <td className="px-4 py-4 flex items-center">General Fund (% of liquidity that goes to General Fund)</td>
