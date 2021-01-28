@@ -9,7 +9,7 @@ function Tech() {
       <div className="container px-5 py-5 mx-auto flex flex-col items-center">
         <div className="prose prose-lg">
           <p>
-            MultiSwap uses concepts and techniques from a few defi protocols in a novel way to create an
+            MultiSwap uses concepts and techniques from some existing defi protocols in a novel way to create an
             elegant and deceptively simple multi collateral AMM with many interesting properties.
           </p>
           <p>
@@ -23,9 +23,9 @@ function Tech() {
           </p>
           <p>
             The concept of arbitrage is very important in the operation of MultiSwap. Arbitrage ensures that the collateral in 
-            the MultiSwap pool has the correct prices. If there is no profitable arbitrage with a MultiSwap pool, then
-            the Unit values are correct in relation to each collateral type in the pool. We will refer to the condition of
-            no profitable arbitrage using the MultiSwap pool collateral as <Arb />.
+            the MultiSwap pool has the correct prices as seen from an outside observer. If there is no profitable arbitrage with 
+            a MultiSwap pool, then the Unit values are correct in relation to each collateral type in the pool. We will refer 
+            to the condition of no profitable arbitrage using the MultiSwap pool collateral as <Arb />.
           </p>
           <h4>
             Properties of Unit
@@ -66,7 +66,7 @@ function Tech() {
             The initial deposit adds all the collateral types to the pool. The collateral and amount of Unit for each collateral type are passed 
             on the request. Note that the amount of Unit does not have to relate to the actual price, but only has to be correct in relation to the 
             other collateral types being added. However, since using an oracle price to calculate the Unit amounts for each collateral type is sufficient, 
-            so that is a good way to proceed. (Note that some kind of slippage parameter(s) will also be used, but we'll ignore that for now.)
+            that is a good way to proceed. (Note that some kind of slippage parameter(s) will also be used, but we'll ignore that for now.)
           </p>
           <p>
             The reserves for each pair in the pool are initialized with the deposit information. The LP share (which we will call <b>lpUnit</b>) is calculated 
@@ -138,7 +138,7 @@ function Tech() {
           </p>
           <p>As an example of the economy of MultiSwap, here is the <b>swap</b> method.</p>
           <div className="prose-sm">
-          <pre>{`
+          <pre className="whitespace-pre-wrap">{`
 function swap(address tokenIn, address tokenOut, uint256 amountIn, uint256 amountOutMin) external {
   require(_isCollateralAllowed(tokenIn) && _isCollateralAllowed(tokenOut), '!allowed');
   require(_activePair(tokenIn) && _activePair(tokenOut), '!active');

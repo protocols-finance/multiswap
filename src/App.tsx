@@ -123,7 +123,7 @@ function App() {
                 </h2>
                 <div className="md:w-3/5 md:pl-6">
                   <p className="prose prose-lg mt-2">
-                    MultiSwap uses concepts and techniques from a few defi protocols in a novel way to create an
+                    MultiSwap uses concepts and techniques from some existing protocols in a novel way to create an
                     elegant and deceptively simple multi collateral AMM with many interesting properties.
                   </p>
                   <div className="flex md:mt-4 mt-6">
