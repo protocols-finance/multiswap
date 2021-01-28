@@ -136,33 +136,6 @@ function Tech() {
             current test version is only 175 lines of Solidity. Granted, it does not have all the options, but the full version is not going to be much 
             more code.
           </p>
-          <p>As an example of the economy of MultiSwap, here is the <b>swap</b> method.</p>
-          <div className="prose-sm">
-          <pre className="whitespace-pre-wrap">{`
-function swap(address tokenIn, address tokenOut, uint256 amountIn, uint256 amountOutMin) external {
-  require(_isCollateralAllowed(tokenIn) && _isCollateralAllowed(tokenOut), '!allowed');
-  require(_activePair(tokenIn) && _activePair(tokenOut), '!active');
-  require(amountIn > 0 && amountOutMin > 0, '!amount');
-  uint256 unit = _swapToUnit(pairs[tokenIn], tokenIn, amountIn);
-  uint256 out = _swapFromUnit(pairs[tokenOut], unit);
-  require(out >= amountOutMin, '!out');
-  IERC20(tokenOut).transfer(msg.sender, out);
-}
-
-function _swapToUnit(Pair storage pair, address token, uint256 amount) internal returns(uint256 unit) {
-  IERC20(token).safeTransferFrom(msg.sender, address(this), amount);
-  unit = amount.mul(pair.unit).div(pair.collateral.add(amount));
-  pair.unit = pair.unit.sub(unit, '!unit');
-  pair.collateral = pair.collateral.add(amount);
-}
-
-function _swapFromUnit(Pair storage pair, uint256 unit) internal returns(uint256 out) {
-  out = unit.mul(pair.collateral).div(pair.unit.add(unit));
-  pair.unit = pair.unit.add(unit);
-  pair.collateral = pair.collateral.sub(out, '!collateral');
-}`}
-          </pre>
-          </div>
           <h3>References</h3>
           <ol>
             <li>
