@@ -33,9 +33,29 @@ function Overview() {
           Arbitrage is always necessary to keep prices accurate. But why not keep the profits? MultiSwap pools can capture most (or all)
           arbitrage profits, providing impermanent loss mitigation.
         </p>
-        <h4>Collateral can be Repurposed</h4>
+        <h4>Capital Efficiency and Locked Liquidity</h4>
         <p>
-          At the same time, underutilized collateral in the pool can be repurposed. Which means more fees for LP's.
+          Perhaps the biggest drawback of AMM's is capital inefficiency. Uniswap requires large reserves in order to handle swaps without incurring
+          excessive slippage. Most of the collateral is not used, but is still needed due to the mathematics of the AMM pricing formula. Capital efficiency
+          can be improved to some extent (and in certain circumstances) by using different formulas for the pricing. But even the best case leaves much
+          of the capital underutilized.
+        </p>
+        <p>
+          To help solve this problem (and to prepare for future products), MultiSwap pools support locked liquidity. Any amount of liquidity can
+          be locked (and unlocked) so it can be utilized for other purposes. For example, a good use of the capital would be to support derivatives based on 
+          the collateral in the pool. (Note - you'll be hearing more from us in this area...)
+        </p>
+        <h4>IBCO, LGE, IDO, ...</h4>
+        <p>
+          You've probably seen the acronyms IBCO, LGE, IDO, etc. These refer to bootstrapping a token by setting up a liquidity pool so the 
+          token can immediately start trading. For example, a popular setup is to have participants supply ETH, and to create a Uniswap pool with 
+          ETH and the new token. This is a very effective and fast way to get a new token in circulation. 
+        </p>
+        <p>
+          Locked liquidity is a powerful option for these cases. The liquidity provided by the participants can be locked for a period of time
+          (for example), to ensure the stability of the token and to prevent dumping. Since MultiSwap locked liquidity is so flexible (you can 
+          specify the amount to lock), it's very easy to design a pool that will be acceptable to both liquidity providers and the issuers of the
+          token.
         </p>
         <h4>Exposure is to All Collateral</h4>
         <p>

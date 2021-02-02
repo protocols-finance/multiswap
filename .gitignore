@@ -25,6 +25,7 @@ yarn-error.log*
 dist/
 .env
 src/protocols.code-workspace
+src/inprogress
 .eslintcache
 
 yarn.lock

@@ -110,9 +110,19 @@ function Tech() {
           </ol>
           <h3>Impermanent Loss Mitigation and Arbitrage</h3>
           <p>
-            Since all the pairs in the pool are in the same contract, MultiSwap has some control over arbitrage. If only EOA accounts are allowed, for
-            example, then if we were to supply our own arbitrage method, we could capture most of the profits and keep them in the pool. This can mitigate
-            some or all impermanent loss.
+            Why let a random third party take your profits? Since all the pairs in the pool are in the same contract, MultiSwap 
+            has control over arbitrage. If only EOA accounts or whitelisted contracts are allowed, then
+            the profits from arbitrage can be captured. This will mitigate some or all impermanent loss.
+          </p>
+          <p>
+            In fact, the optimal strategy is to perform the arbitrage before any swaps. Note that this is optimal for the traders too, they
+            always get the right price. With high gas prices, this won't be possible to do perfectly, but it can still lead to substantial 
+            profit capture, especially for low volume pools.
+          </p>
+          <p>
+            But once L2 platforms are available, it will definitely be possible and will provide an optimal experience for all
+            parties - the LP's and the traders. (As a side note, there is already mainnet testing being performed with L2 
+            platforms by Curve and Synthetix, so within a short time, this will be a viable solution.)
           </p>
           <h3>Key Insights</h3>
           <ol>
@@ -173,6 +183,9 @@ function Tech() {
             <li>
               Using different formula for the internal AMM pairs. An obvious option would be to use the Curve formula for pools with
               tokens of similar value.
+            </li>
+            <li>
+              Derivatives and other uses of the capital in the pool.
             </li>
           </ol>
         </div>

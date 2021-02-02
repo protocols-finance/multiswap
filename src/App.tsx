@@ -11,13 +11,44 @@ import {
 import { DiscordUrl, TwitterUrl, GithubUrl } from './constants';
 
 import LGE from './routes/LGE';
+import Home from './routes/Home';
 import Tech from './routes/Tech';
 import Overview from './routes/Overview';
-import { DiscordLink, TwitterLink } from './components';
+
+import { UseWalletProvider } from 'use-wallet'
+import MultiSwap from './routes/MultiSwap';
+
+function chainId(): number {
+  return 1
+}
+
+const Banner = () => {
+  return (
+    <section className="text-gray-600 body-font">
+    <div className="container mx-auto flex px-5 items-center justify-center flex-col">
+      <div
+        className="object-cover object-center rounded"
+        style={{ width: "100%", height: "100%", backgroundImage: "url('banner.jpg')" }}
+      >
+        <div className="text-center w-full p-5">
+          <h1 className="title-font sm:text-5xl text-6xl mb-4 font-medium text-white">MultiSwap</h1>
+          <h2 className="mb-8 leading-relaxed text-3xl text-white">
+            Multi Collateral Liquidity, Impermanent Loss Mitigation, Private Pools, ...
+          </h2>
+        </div>
+      </div>
+    </div>
+  </section>
+  )
+}
 
 function App() {
   return (
     <Router>
+      <UseWalletProvider
+        chainId={chainId()}
+        connectors={{}}
+      >
       <div>
         <header className="text-gray-600 body-font">
           <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -39,6 +70,7 @@ function App() {
                 Details
               </Link>
             </nav>
+            <Link className="mr-5 hover:text-gray-900" to="/multiswap">
             <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
               App
               <svg
@@ -53,195 +85,28 @@ function App() {
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
             </button>
+            </Link>
           </div>
         </header>
-        <section className="text-gray-600 body-font">
-          <div className="container mx-auto flex px-5 items-center justify-center flex-col">
-            <div
-              className="object-cover object-center rounded"
-              style={{ width: "100%", height: "100%", backgroundImage: "url('banner.jpg')" }}
-            >
-              <div className="text-center w-full p-5">
-                <h1 className="title-font sm:text-5xl text-6xl mb-4 font-medium text-white">MultiSwap</h1>
-                <h2 className="mb-8 leading-relaxed text-3xl text-white">
-                  Multi Collateral Liquidity, Impermanent Loss Mitigation, Private Pools, ...
-                </h2>
-              </div>
-            </div>
-          </div>
-        </section>
         <Switch>
           <Route path="/tech">
+            <Banner />
             <Tech />
           </Route>
           <Route path="/lge">
+            <Banner />
             <LGE />
           </Route>
           <Route path="/overview">
+            <Banner />
             <Overview />
           </Route>
+          <Route path="/multiswap">
+            <MultiSwap />
+          </Route>
           <Route path="/">
-            <section className="text-gray-800 body-font">
-              <div className="container px-5 py-5 mx-auto flex flex-wrap">
-                <h2 className="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">
-                  Multi Collateral Liquidity Pools
-                </h2>
-                <div className="md:w-3/5 md:pl-6">
-                  <p className="prose prose-lg">
-                    If we could list the best properties a liquidity pool <i>could</i> have, what would they be?
-                  </p>
-                  <p className="prose prose-lg mt-2">
-                    Surely multiple collateral types and impermanent loss mitigation top the list. But what if we could also add
-                    private pools, and more ...
-                  </p>
-                  <p className="prose prose-lg mt-2">
-                    MultiSwap is a breakthrough for AMM's, clearing the way for massive liquidity and multi collateral trading.
-                  </p>
-                  <div className="flex md:mt-4 mt-6">
-                    <Link className="text-indigo-500 inline-flex items-center" to="/overview">
-                      <span>Overview</span>
-                      <svg
-                        fill="none"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        className="w-4 h-4 ml-2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section className="text-gray-800 body-font">
-              <div className="container px-5 py-5 mx-auto flex flex-wrap">
-                <h2 className="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">
-                  Technical Details
-                </h2>
-                <div className="md:w-3/5 md:pl-6">
-                  <p className="prose prose-lg mt-2">
-                    MultiSwap uses concepts and techniques from some existing protocols in a novel way to create an
-                    elegant and deceptively simple multi collateral AMM with many interesting properties.
-                  </p>
-                  <div className="flex md:mt-4 mt-6">
-                    <Link className="text-indigo-500 inline-flex items-center" to="/tech">
-                      <span>Technical Details</span>
-                      <svg
-                        fill="none"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        className="w-4 h-4 ml-2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section className="text-gray-800 body-font">
-              <div className="container px-5 py-5 mx-auto flex flex-wrap">
-                <h2 className="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">
-                  The Liquidity Generation Event
-                </h2>
-                <div className="md:w-3/5 md:pl-6">
-                  <p className="prose prose-lg">
-                    To bootstrap the MultiSwap token and community, MultiSwap will have a Liquidity Generation
-                    Event. This will create a liquidity pool for the MULTI token so that it can be used for governance,
-                    yield farming, and other purposes.
-                  </p>
-                  <p className="prose prose-lg mt-2">
-                    Make no mistake, MultiSwap is a powerful defi lego. It's potential impact should not be underestimated.
-                  </p>
-                  <div className="flex md:mt-4 mt-6">
-                    <Link className="text-indigo-500 inline-flex items-center" to="/lge">
-                      Token
-                      <svg
-                        fill="none"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        className="w-4 h-4 ml-2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section className="text-gray-800 body-font">
-              <div className="container px-5 py-5 mx-auto flex flex-wrap">
-                <h2 className="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">
-                  Join us on Discord
-                </h2>
-                <div className="md:w-3/5 md:pl-6">
-                  <p className="prose prose-lg">
-                    Please join us on <DiscordLink title="Discord" /> and help run MultiSwap. MultiSwap is controlled by the
-                    community. Get involved and be a part of one of the most innovative and exciting defi projects
-                    around today.
-                  </p>
-                  <p className="prose prose-lg mt-2">
-                    <DiscordLink title="Discord" /> is the source of truth for all things MultiSwap.
-                  </p>
-                  <div className="flex md:mt-4 mt-6">
-                    <a className="text-indigo-500 inline-flex items-center" href={DiscordUrl}>
-                      Join Discord
-                      <svg
-                        fill="none"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        className="w-4 h-4 ml-2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section className="text-gray-800 body-font">
-              <div className="container px-5 py-5 mx-auto flex flex-wrap">
-                <h2 className="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">
-                  Join us on Twitter
-                </h2>
-                <div className="md:w-3/5 md:pl-6">
-                  <p className="prose prose-lg">
-                    Please join us on <TwitterLink title="Twitter" /> to get the latest on MultiSwap.
-                  </p>
-                  <p className="prose prose-lg mt-2">
-                    <TwitterLink title="Twitter" /> has up to date news for all things MultiSwap.
-                  </p>
-                  <div className="flex md:mt-4 mt-6">
-                    <a className="text-indigo-500 inline-flex items-center" href={TwitterUrl}>
-                      Twitter
-                      <svg
-                        fill="none"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        className="w-4 h-4 ml-2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </section>
+            <Banner />
+            <Home />
           </Route>
         </Switch>
         <footer className="text-gray-600 body-font">
@@ -294,6 +159,7 @@ function App() {
           </div>
         </footer>
       </div>
+      </UseWalletProvider>
     </Router>
   );
 }

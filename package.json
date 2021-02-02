@@ -5,6 +5,7 @@
   "dependencies": {
     "@cloudflare/wrangler": "^1.13.0",
     "@craco/craco": "^6.0.0",
+    "@ethersproject/providers": "^5.0.19",
     "@tailwindcss/postcss7-compat": "^2.0.2",
     "@tailwindcss/typography": "^0.3.1",
     "@testing-library/jest-dom": "^5.11.4",
@@ -16,6 +17,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.7",
     "autoprefixer": "^9",
+    "ethers": "^5.0.26",
     "global": "^4.4.0",
     "postcss": "^7",
     "react": "^17.0.1",
@@ -24,6 +26,7 @@
     "react-scripts": "4.0.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "^4.0.3",
+    "use-wallet": "^0.8.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
