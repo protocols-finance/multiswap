@@ -28,6 +28,16 @@ function Overview() {
         <p>
            MultiSwap is easily the most LP friendly AMM in existence.
         </p>
+        <h4>Collateral Prices are Independent</h4>
+        <p>
+          In a typical AMM like Uniswap, the collapse of the price of one of the tokens causes the entire pool to be worthless. This is <b>not</b>
+          the case with MultiSwap. Since each collateral type is paired with a <i>Unit</i> token, the prices between collateral tokens are not
+          correlated. If the price of a token were to collapse in a MultiSwap pool, it would only effect that token and the rest of the pool
+          would operate normally.
+        </p>
+        <p>
+          There is even a way to remove a token from a pool. This option was added specifically for this case.
+        </p>
         <h4>Impermanent Loss Mitigation</h4>
         <p>
           Arbitrage is always necessary to keep prices accurate. But why not keep the profits? MultiSwap pools can capture most (or all)
@@ -57,18 +67,48 @@ function Overview() {
           specify the amount to lock), it's very easy to design a pool that will be acceptable to both liquidity providers and the issuers of the
           token.
         </p>
+        <h4>Rug Pull Protection</h4>
+        <p>
+          MultiSwap is the only AMM with <b>Rug Pull Protection</b>. Due to the internal architecture of MultiSwap, it's easy to 
+          provide protection against rug pulls. Rug pulls come in two varieties:
+        </p>
+        <ol>
+          <li>
+            Minting large amounts of a token suddenly, and swapping it for other collateral in the pool.
+          </li>
+          <li>
+            Removing a large amount of liquidity suddenly.
+          </li>
+        </ol>
+        <p>
+          MultiSwap can eliminate both of these possibilities. 
+        </p>
+        <ol>
+          <li>
+            MultiSwap can monitor some aspects of the collateral in the pool (such as the totalSupply), and prevent swapping the collateral in the case of
+            a large change. 
+          </li>
+          <li>
+            MultiSwap has advanced permissions controlling access and other characteristics of the pools. If used properly, these permissions 
+            can eliminate rug pulls.
+          </li>
+          <li>
+            MultiSwap can lock liquidity in the pool as a whole, or the liquidity from a particular account. This eliminates sudden withdrawals.
+          </li>
+        </ol>
+        <p>
+          Obviously this has vast implications for liqidity mining (or yield farming) applications. If MultiSwap pools are used, 
+          the worry over rug pulls can be eliminated, making it easy for new projects to gain traction and liquidity. 
+        </p>
         <h4>Exposure is to All Collateral</h4>
         <p>
           You are not exposed to any one collateral type, but to the entire pool as a whole.
         </p>
         <h4>Private Pools - Mini DEX</h4>
         <p>
-          One of the nice options on MultiSwap pools is the private pool option. You can restrict access to a pool to whitelisted accounts or contracts. This
-          can be very useful for money management applications.
-        </p>
-        <p>
-          You can create a large pool of collateral and let your clients trade against it. The trading fees could even
-          be set to 0 for a competitive edge. Since you control the arbitrage on the pool, this can be a very cost effective and useful service.
+          A very large unmet need in defi is private collateral pools. Private refers to the ability to restrict access to known participants. Private pools
+          have many uses. Perhaps the top use is a money management firm that requires large pools of collateral. MultiSwap pools let you easily manage
+          the collateral, and make it tradeable for your customers.
         </p>
       </div>
     </div>
