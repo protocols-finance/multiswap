@@ -10,13 +10,14 @@ import {
 } from 'react-router-dom';
 import { DiscordUrl, TwitterUrl, GithubUrl } from './constants';
 
-import LGE from './routes/LGE';
+import Tokenomics from './routes/Tokenomics';
 import Home from './routes/Home';
 import Tech from './routes/Tech';
 import Overview from './routes/Overview';
 
 import { UseWalletProvider } from 'use-wallet'
 import MultiSwap from './routes/MultiSwap';
+import Roadmap from './routes/Roadmap';
 
 function chainId(): number {
   return 1
@@ -63,11 +64,14 @@ function App() {
               <Link className="mr-5 hover:text-gray-900" to="/overview">
                 Overview
               </Link>
-              <Link className="mr-5 hover:text-gray-900" to="/lge">
-                Token
+              <Link className="mr-5 hover:text-gray-900" to="/tokenomics">
+                Tokenomics
               </Link>
               <Link className="mr-5 hover:text-gray-900" to="/tech">
-                Details
+                Technical
+              </Link>
+              <Link className="mr-5 hover:text-gray-900" to="/roadmap">
+                Roadmap
               </Link>
             </nav>
             <Link className="mr-5 hover:text-gray-900" to="/multiswap">
@@ -89,13 +93,17 @@ function App() {
           </div>
         </header>
         <Switch>
+          <Route path="/roadmap">
+            <Banner />
+            <Roadmap />
+          </Route>
           <Route path="/tech">
             <Banner />
             <Tech />
           </Route>
-          <Route path="/lge">
+          <Route path="/tokenomics">
             <Banner />
-            <LGE />
+            <Tokenomics />
           </Route>
           <Route path="/overview">
             <Banner />

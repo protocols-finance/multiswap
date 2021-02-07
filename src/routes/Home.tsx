@@ -72,20 +72,20 @@ function Home() {
       <section className="text-gray-800 body-font">
         <div className="container px-5 py-5 mx-auto flex flex-wrap">
           <h2 className="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">
-            The Liquidity Generation Event
+            Tokenomics
           </h2>
           <div className="md:w-3/5 md:pl-6">
             <p className="prose prose-lg">
+              The tokenomics of the MULTI token are simple and straightforward.
+            </p>
+            <p className="prose prose-lg mt-2">
               To bootstrap the MultiSwap token and community, MultiSwap will have a Liquidity Generation Event. This
               will create a liquidity pool for the MULTI token so that it can be used for governance, yield farming, and
               other purposes.
             </p>
-            <p className="prose prose-lg mt-2">
-              Make no mistake, MultiSwap is a powerful defi lego. It's potential impact should not be underestimated.
-            </p>
             <div className="flex md:mt-4 mt-6">
-              <Link className="text-indigo-500 inline-flex items-center" to="/lge">
-                Token
+              <Link className="text-indigo-500 inline-flex items-center" to="/tokenomics">
+                Tokenomics
                 <svg
                   fill="none"
                   stroke="currentColor"

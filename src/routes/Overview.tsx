@@ -100,6 +100,10 @@ function Overview() {
           Obviously this has vast implications for liqidity mining (or yield farming) applications. If MultiSwap pools are used, 
           the worry over rug pulls can be eliminated, making it easy for new projects to gain traction and liquidity. 
         </p>
+        <h4>Configurable Bonding Curves</h4>
+          <p>
+            Multiple Bonding Curves (or AMM formulas) will be supported to better utilize collateral.
+          </p>
         <h4>Exposure is to All Collateral</h4>
         <p>
           You are not exposed to any one collateral type, but to the entire pool as a whole.
