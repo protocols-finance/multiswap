@@ -8,7 +8,7 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import { DiscordUrl, TwitterUrl, GithubUrl } from './constants';
+import { DiscordUrl, TwitterUrl, GithubUrl, PitchDeckUrl } from './constants';
 
 import Tokenomics from './routes/Tokenomics';
 import Home from './routes/Home';
@@ -123,6 +123,9 @@ function App() {
               <img className="p-1" src="/protocols-32.png" alt="MultiSwap" />
               <p className="text-gray-500 text-md text-center sm:text-left">© 2021 MultiSwap</p>
               <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center items-center sm:justify-start">
+                <a title="Pitch Deck" href={PitchDeckUrl} target="_blank" rel="noreferrer">
+                  <img width="24" height="24" src="/pitchdeck.png" alt="Pitch Deck" />
+                </a>
                 <a className="ml-3 text-indigo-500" href={DiscordUrl}>
                   <svg
                     enable-background="new 0 0 24 24"
