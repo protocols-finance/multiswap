@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.blur {
+  animation: blur 1s infinite;
+}
+
+@keyframes blur {
+  0%, 100%  { filter: blur(0px); }
+  50% { filter: blur(3px); }
+}
+
+.blurSlow {
+  animation: blur 2s infinite;
+}
+
+.bgSlow {
+  animation: bgcolor 2s infinite;
+}

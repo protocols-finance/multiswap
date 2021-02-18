@@ -18,6 +18,8 @@ import Overview from './routes/Overview';
 import { UseWalletProvider } from 'use-wallet'
 import MultiSwap from './routes/MultiSwap';
 import Roadmap from './routes/Roadmap';
+import { MetamaskButton } from './components';
+import Contributor from './routes/Contributor';
 
 function chainId(): number {
   return 1
@@ -40,6 +42,22 @@ const Banner = () => {
       </div>
     </div>
   </section>
+  )
+}
+
+const SmallBanner = () => {
+  return (
+    <section className="text-gray-600 body-font">
+      <div 
+        className="object-cover object-center rounded container mx-auto flex px-5 items-center justify-center flex-row"
+        style={{ width: "100%", height: 100, backgroundImage: "url('banner.jpg')" }}
+      >
+        <div className="text-center w-full p-5">
+          <h1 className="title-font sm:text-5xl text-6xl font-medium text-white">MultiSwap LGE</h1>
+        </div>
+        <MetamaskButton width={48} height={48} />
+      </div>
+    </section>
   )
 }
 
@@ -69,6 +87,9 @@ function App() {
               </Link>
               <Link className="mr-5 hover:text-gray-900" to="/tech">
                 Technical
+              </Link>
+              <Link className="mr-5 hover:text-gray-900" to="/contributor">
+                Contributor Program
               </Link>
               <Link className="mr-5 hover:text-gray-900" to="/roadmap">
                 Roadmap
@@ -109,7 +130,12 @@ function App() {
             <Banner />
             <Overview />
           </Route>
+          <Route path="/contributor">
+            <Banner />
+            <Contributor />
+          </Route>
           <Route path="/multiswap">
+            <SmallBanner />
             <MultiSwap />
           </Route>
           <Route path="/">
@@ -128,7 +154,7 @@ function App() {
                 </a>
                 <a className="ml-3 text-indigo-500" href={DiscordUrl}>
                   <svg
-                    enable-background="new 0 0 24 24"
+                    enableBackground="new 0 0 24 24"
                     height="24"
                     viewBox="0 0 24 24"
                     width="24"
@@ -144,7 +170,7 @@ function App() {
                 <a className="ml-3 text-indigo-500" href={GithubUrl}>
                   <svg
                     fill="currentColor"
-                    enable-background="new 0 0 24 24"
+                    enableBackground="new 0 0 24 24"
                     height="24"
                     viewBox="0 0 24 24"
                     width="24"

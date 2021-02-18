@@ -28,19 +28,33 @@ function Overview() {
         <p>
            MultiSwap is easily the most LP friendly AMM in existence.
         </p>
-        <h4>Collateral Prices are Independent</h4>
+        <h4>Collateral Price Isolation</h4>
         <p>
-          In a typical AMM like Uniswap, the collapse of the price of one of the tokens causes the entire pool to be worthless. This is <b>not</b>
-          the case with MultiSwap. Since each collateral type is paired with a <i>Unit</i> token, the prices between collateral tokens are not
+          In a typical AMM like Uniswap, the collapse of the price of one of the tokens causes the entire pool to be worthless. This is <b>not</b> the
+          case with MultiSwap. Since each collateral type is paired with a <i>Unit</i> token, the prices between collateral tokens are not
           correlated. If the price of a token were to collapse in a MultiSwap pool, it would only effect that token and the rest of the pool
           would operate normally.
         </p>
         <p>
           There is even a way to remove a token from a pool. This option was added specifically for this case.
         </p>
+        <h4>Impermanent Loss Isolation</h4>
+        <p>
+          In the same way that prices are isolated, impermanent loss is isolated also. If one token drops in price (for example), then 
+          you will see impermanent loss on that token in relation to the Unit token, but it won't effect any of the other collateral 
+          in the pool. 
+        </p>
+        <p>
+          A good way to think about it is to picture each collateral token paired with USDC or some stable coin. As the price of the collateral 
+          fluctuates, you get the impermanent loss of the collateral/USDC pair <b>only</b>.
+        </p>
+        <p>
+          But the impermanent loss is <b>completely isolated</b> to just that pair, it does not effect any other collateral in the pool.
+          This is as close to eliminating impermanent loss as you can get.
+        </p>
         <h4>Impermanent Loss Mitigation</h4>
         <p>
-          Arbitrage is always necessary to keep prices accurate. But why not keep the profits? MultiSwap pools can capture most (or all)
+          Another way to mitigate impermanent loss is to capture arbitrage profits. Arbitrage is always necessary to keep prices accurate. But why not keep the profits? MultiSwap pools can capture most (or all)
           arbitrage profits, providing impermanent loss mitigation.
         </p>
         <h4>Capital Efficiency and Locked Liquidity</h4>

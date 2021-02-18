@@ -1,5 +1,8 @@
 import React from 'react';
 import { DiscordLink } from '../components';
+import {
+  Link
+} from 'react-router-dom';
 
 function Tokenomics() {
   return (
@@ -19,6 +22,14 @@ function Tokenomics() {
                   <td className="px-4 py-4">100M</td>
                 </tr>
                 <tr className="hover:bg-gray-100 border-b border-gray-200 py-4">
+                  <td className="px-4 py-4 flex items-center">Contributor Program Fund</td>
+                  <td className="px-4 py-4">5M (5%)</td>
+                </tr>
+                <tr className="hover:bg-gray-100 border-b border-gray-200 py-4">
+                  <td className="px-4 py-4 flex items-center">LGE Fund</td>
+                  <td className="px-4 py-4">5M (5%)</td>
+                </tr>
+                <tr className="hover:bg-gray-100 border-b border-gray-200 py-4">
                   <td className="px-4 py-4 flex items-center">Founders Fund</td>
                   <td className="px-4 py-4">15M (15%)</td>
                 </tr>
@@ -32,17 +43,23 @@ function Tokenomics() {
                 </tr>
                 <tr className="hover:bg-gray-100 border-b border-gray-200 py-4">
                   <td className="px-4 py-4 flex items-center">Community Fund</td>
-                  <td className="px-4 py-4">70M (70%)</td>
+                  <td className="px-4 py-4">65M (65%)</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <ul>
             <li>
-              The <b>Founders Fund</b> is under a vesting schedule.
+              The <b>Contributor Program Fund</b> is for the <Link className="mr-5 hover:text-gray-900" to="/contributor">Contributor Program</Link>
             </li>
             <li>
-              The <b>Fundraising Fund</b> is used to bootstrap the MULTI token and for fundraising rounds.
+              The <b>LGE Fund</b> is for any Liquidity Generation Events. Any tokens not used will be transferred to the Community Fund.
+            </li>
+            <li>
+              The <b>Founders Fund</b> is for founders and core team members. Any tokens distributed are under a vesting schedule.
+            </li>
+            <li>
+              The <b>Fundraising Fund</b> is used to for additional fundraising programs if necessary. Any tokens distributed are under a vesting schedule.
             </li>
             <li>
               The <b>General Fund</b> is used to attract and incentivize strategic partners to help grow MultiSwap.
@@ -105,7 +122,7 @@ function Tokenomics() {
                 </tr>
                 <tr className="hover:bg-gray-100 border-b border-gray-200 py-4">
                   <td className="px-4 py-4 flex items-center">
-                    Development Fund (% of ETH that goes to Development Fund)
+                    General Fund (% of ETH that goes to General Fund)
                   </td>
                   <td className="px-4 py-4">10%</td>
                 </tr>

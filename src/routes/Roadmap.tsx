@@ -20,7 +20,7 @@ function Roadmap() {
         <div className="prose prose-lg">
           <h3>Roadmap</h3>
           <p>
-            MultiSwap V1 is expected to be released end of <b>Q1 2021</b> with the following features:
+            MultiSwap V1 is expected to be released in <b>Q2 2021</b> with the following features:
           </p>
           <h4>MULTI Farming</h4>
           <p>

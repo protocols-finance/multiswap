@@ -78,11 +78,6 @@ function Home() {
             <p className="prose prose-lg">
               The tokenomics of the MULTI token are simple and straightforward.
             </p>
-            <p className="prose prose-lg mt-2">
-              To bootstrap the MultiSwap token and community, MultiSwap will have a Liquidity Generation Event. This
-              will create a liquidity pool for the MULTI token so that it can be used for governance, yield farming, and
-              other purposes.
-            </p>
             <div className="flex md:mt-4 mt-6">
               <Link className="text-indigo-500 inline-flex items-center" to="/tokenomics">
                 Tokenomics
