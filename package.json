@@ -6,6 +6,8 @@
     "@cloudflare/wrangler": "^1.13.0",
     "@craco/craco": "^6.0.0",
     "@ethersproject/providers": "^5.0.19",
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/postcss7-compat": "^2.0.2",
     "@tailwindcss/typography": "^0.3.1",
     "@testing-library/jest-dom": "^5.11.4",

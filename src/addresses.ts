@@ -1,9 +1,9 @@
 const addresses = {
   DAI: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
   WETH: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
-  MultiSwapLGE: '',
-  MultiSwapToken: '',
-  MultiSwapVesting: '',
+  LGE: '0x3fC3c0f0Fc25166144b48c4A4a6A8D0eC99D0D21',
+  MultiSwapToken: '0x9E26665FC22C96eBC33C6255FC5c79929b718B33',
+  MultiSwapVesting: '0x1671ba753c015112bB4325af62Bf6E11858FC491',
 }
 
 export default addresses;
